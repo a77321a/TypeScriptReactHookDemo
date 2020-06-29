@@ -6,7 +6,6 @@ import HeaderBar from './components/HeaderBar/HeaderBar'
 import { withRouter } from 'react-router-dom'
 import styled from 'styled-components'
 import store from './store/index'
-
 const BodyMiddle = styled.div`
   /* position: absolute; */
   /* top: 45px;
