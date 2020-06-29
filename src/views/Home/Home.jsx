@@ -2,7 +2,7 @@ import React, { useState, Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 const Home = (props) => {
-  return <div>home</div>
+  return <div style={{  background: '#fff' }}>home</div>
 }
 
 Home.propTypes = {

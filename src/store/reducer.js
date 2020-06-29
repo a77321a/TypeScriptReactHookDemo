@@ -7,7 +7,6 @@
  */
 
 
-import { changeHeaderBar, changeFooterShow } from './actionTypes'
 
 const defaultState = {
   headerBarName: '',
@@ -15,15 +14,6 @@ const defaultState = {
 }
 // reducer可以接受state，但绝不能修改state
 export default (state = defaultState, action) => {
-  if (action.type === changeHeaderBar) {
-    const newState = JSON.parse(JSON.stringify(state))
-    newState.headerBarName = action.value
-    return newState
-  }
-  if (action.type === changeFooterShow) {
-    const newState = JSON.parse(JSON.stringify(state))
-    newState.showFooter = action.value
-    return newState
-  }
+  
   return state
 }

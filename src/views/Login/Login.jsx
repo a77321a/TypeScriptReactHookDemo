@@ -6,16 +6,13 @@ import { WingBlank, WhiteSpace, Button } from 'antd-mobile'
 const Login = (props) => {
   const [mobile, setMobile] = useState(18661415132)
   const [password, setPassword] = useState(123456)
+  React.useEffect(()=>{
+    localStorage.clear()
+  },)
   const history = useHistory()
   localStorage.clear()
   const login = () => {
     history.push('/home')
-    // api.loginApi({ mobile: mobile, password: password }).then(res => {
-    //   if (res.code === 200) {
-    //     localStorage.setItem('token', res.data)
-    //     history.push('/goods')
-    //   }
-    // })
   }
   return (
     <Fragment>
