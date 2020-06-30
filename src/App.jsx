@@ -26,8 +26,8 @@ const App = (props) => {
   return (
     <Provider store={store}>
       {/* <GlobalStyle /> */}
-      <BodyMiddle className="content">{props.children}</BodyMiddle>
-      {location.pathname !== '/login' ? <IndexFooter /> : null}
+      <BodyMiddle>{props.children}</BodyMiddle>
+      <IndexFooter />
     </Provider>
   )
 }

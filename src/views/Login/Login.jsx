@@ -4,15 +4,17 @@ import * as api from './api'
 import { useHistory } from 'react-router-dom'
 import { WingBlank, WhiteSpace, Button } from 'antd-mobile'
 const Login = (props) => {
-  const [mobile, setMobile] = useState(18661415132)
-  const [password, setPassword] = useState(123456)
-  React.useEffect(()=>{
+  const [mobile, setMobile] = useState('13333333333')
+  const [password, setPassword] = useState('123456')
+  React.useEffect(() => {
     localStorage.clear()
-  },)
+  })
   const history = useHistory()
   localStorage.clear()
   const login = () => {
-    history.push('/home')
+    api.loginApi({ mobile, password, type: 1 }).then((res) => {
+      console.log(res)
+    })
   }
   return (
     <Fragment>

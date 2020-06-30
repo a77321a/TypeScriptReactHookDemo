@@ -55,11 +55,12 @@ axios.interceptors.response.use(
       // tryHideFullScreenLoading()
       endLoading()
     };
-    // if (response.data.code === 200) {
-    //   return response.data
-    // } else {
-    // }
-    return response
+    if (response.data.code === 200) {
+      return response.data
+    } else {
+      Toast.info(response.data.msg, 1);
+      return response.data
+    }
 
   },
   (error) => {
@@ -67,7 +68,6 @@ axios.interceptors.response.use(
       loading.close()
     };
     requestList.length = 0
-    // throw new axios.Cancel('cancel request');
     return Promise.reject(error)
   }
 )
@@ -174,15 +174,10 @@ function todelete (url, params = {}) {
       })
   })
 }
-// const buildConfig = require('../../build/' + process.env.BUILD_ENV + '.js')
-// window.ctx = buildConfig.BASE_URL
-// Vue.prototype.$screen = buildConfig.screen
 axios.defaults.timeout = 0
-axios.defaults.withCredentials = true
-// axios.defaults.baseURL = 'http://localhost:8888/api/'
 // axios.defaults.baseURL = 'http://118.31.13.116/api/'
 
-// axios.defaults.baseURL = '/api/'
+axios.defaults.baseURL = 'https://testwx.baijiayun.com'
 
 axios.defaults.headers.Authorization = localStorage.token
 axios.defaults.headers['token'] = localStorage.token
