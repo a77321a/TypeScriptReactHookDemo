@@ -8,7 +8,9 @@ const FootWrap = styled.div`
   bottom: 0;
   width: 100%;
 `
-const IndexFooter = props => {
+const IndexFooter = (props) => {
+  const [barList, setBarList] = React.useState([])
+  React.useEffect(() => {}, [barList])
   return (
     <FootWrap>
       <TabBar
@@ -17,7 +19,7 @@ const IndexFooter = props => {
         barTintColor="white"
       >
         <TabBar.Item
-          title="Life"
+          title="首页"
           key="Life"
           icon={
             <div
@@ -25,7 +27,7 @@ const IndexFooter = props => {
                 width: '22px',
                 height: '22px',
                 background:
-                  'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat'
+                  'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat',
               }}
             />
           }
@@ -35,7 +37,7 @@ const IndexFooter = props => {
                 width: '22px',
                 height: '22px',
                 background:
-                  'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat'
+                  'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat',
               }}
             />
           }
@@ -48,7 +50,7 @@ const IndexFooter = props => {
                 width: '22px',
                 height: '22px',
                 background:
-                  'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat'
+                  'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat',
               }}
             />
           }
@@ -58,7 +60,7 @@ const IndexFooter = props => {
                 width: '22px',
                 height: '22px',
                 background:
-                  'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat'
+                  'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat',
               }}
             />
           }
@@ -73,7 +75,7 @@ const IndexFooter = props => {
                 width: '22px',
                 height: '22px',
                 background:
-                  'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat'
+                  'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat',
               }}
             />
           }
@@ -83,7 +85,7 @@ const IndexFooter = props => {
                 width: '22px',
                 height: '22px',
                 background:
-                  'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat'
+                  'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat',
               }}
             />
           }
@@ -94,11 +96,11 @@ const IndexFooter = props => {
         <TabBar.Item
           icon={{
             uri:
-              'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg'
+              'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg',
           }}
           selectedIcon={{
             uri:
-              'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg'
+              'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg',
           }}
           title="My"
           key="my"

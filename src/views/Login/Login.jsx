@@ -3,17 +3,23 @@ import { Logo, FormWrap } from './style'
 import * as api from './api'
 import { useHistory } from 'react-router-dom'
 import { WingBlank, WhiteSpace, Button } from 'antd-mobile'
+import { connect } from 'react-redux'
+import { SET_TOKEN, SET_USER_INFO } from '../../store/actionCreators'
 const Login = (props) => {
   const [mobile, setMobile] = useState('13333333333')
   const [password, setPassword] = useState('123456')
+  const history = useHistory()
   React.useEffect(() => {
     localStorage.clear()
-  })
-  const history = useHistory()
-  localStorage.clear()
+  }, [history])
   const login = () => {
+    const { dispatch } = props
     api.loginApi({ mobile, password, type: 1 }).then((res) => {
-      console.log(res)
+      localStorage.token = res.remember_token
+      localStorage.setItem('userInfo', JSON.stringify(res))
+      dispatch(SET_TOKEN(res.remember_token))
+      dispatch(SET_USER_INFO(res))
+      history.push('/home')
     })
   }
   return (
@@ -52,4 +58,9 @@ const Login = (props) => {
     </Fragment>
   )
 }
-export default Login
+
+const mapDispatchToProps = (dispatch) => {
+  return {}
+}
+
+export default connect(mapDispatchToProps)(Login)

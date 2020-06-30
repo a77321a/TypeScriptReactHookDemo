@@ -5,6 +5,9 @@ import 'react-animated-router/animate.css'
 import App from '../App'
 import Login from '../views/Login/Login'
 import Home from '../views/Home/Home'
+import { Provider } from 'react-redux'
+import store from '../store/index'
+
 const BasicRoute = (props) => {
   let AppRouter = (
     <App>
@@ -15,12 +18,14 @@ const BasicRoute = (props) => {
     </App>
   )
   return (
-    <Router>
-      <AnimatedRouter appear={true} timeout={150}>
-        <Route title="登录" exact path="/login" component={Login}></Route>
-        <Route exact path="/" render={(props) => AppRouter}></Route>
-      </AnimatedRouter>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <AnimatedRouter appear={true} timeout={150}>
+          <Route title="登录" exact path="/login" component={Login}></Route>
+          <Route path="/" render={(props) => AppRouter}></Route>
+        </AnimatedRouter>
+      </Router>
+    </Provider>
   )
 }
 export default BasicRoute

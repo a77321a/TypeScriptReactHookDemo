@@ -2,11 +2,13 @@ import React from 'react'
 import './common/css/reset.css'
 // import GlobalStyle from './common/css/reset'
 import IndexFooter from './components/Footer/IndexFooter'
-import { Provider } from 'react-redux'
+// import { Provider } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import styled from 'styled-components'
-import store from './store/index'
+// import store from './store/index'
 import './App.css'
+import { connect } from 'react-redux'
+
 const BodyMiddle = styled.div`
   background: #fff;
   box-sizing: border-box;
@@ -14,22 +16,32 @@ const BodyMiddle = styled.div`
   padding: 0 0 55px;
   overflow-y: scroll;
 `
+
 const App = (props) => {
-  let { location } = props
+  let { location, token } = props
 
   React.useEffect(() => {
-    if (location.pathname === '/') {
+    console.log(token)
+    if (!token) {
+      props.history.push('/login')
+    } else if (location.pathname === '/') {
       props.history.push('/home')
     }
-  })
+  }, [location])
 
   return (
-    <Provider store={store}>
+    <React.Fragment>
       {/* <GlobalStyle /> */}
       <BodyMiddle>{props.children}</BodyMiddle>
       <IndexFooter />
-    </Provider>
+    </React.Fragment>
   )
 }
 
-export default withRouter(App)
+const mapStateToProps = (state) => {
+  return {
+    token: state.token,
+  }
+}
+
+export default withRouter(connect(mapStateToProps)(App))
