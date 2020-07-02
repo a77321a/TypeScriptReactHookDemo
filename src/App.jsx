@@ -12,9 +12,11 @@ import { connect } from 'react-redux'
 const BodyMiddle = styled.div`
   background: #fff;
   box-sizing: border-box;
+  width: 100%;
   height: calc(100vh - 50px);
-  padding: 0 0 55px;
+  padding: 0;
   overflow-y: scroll;
+  overflow-x: hidden;
 `
 
 const App = (props) => {

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { TabBar } from 'antd-mobile'
 import store from '../../store'
-
 const FootWrap = styled.div`
   position: fixed;
   bottom: 0;
