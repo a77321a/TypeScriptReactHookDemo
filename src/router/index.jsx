@@ -5,6 +5,8 @@ import 'react-animated-router/animate.css'
 import App from '../App'
 import Login from '../views/Login/Login'
 import Home from '../views/Home/Home'
+import ForgetPwd from '../views/ForgetPwd/ForgetPwd'
+
 import { Provider } from 'react-redux'
 import store from '../store/index'
 
@@ -22,6 +24,13 @@ const BasicRoute = (props) => {
       <Router>
         <AnimatedRouter appear={true} timeout={150}>
           <Route title="登录" exact path="/login" component={Login}></Route>
+          <Route
+            title="忘记密码"
+            exact
+            path="/forget"
+            component={ForgetPwd}
+          ></Route>
+
           <Route path="/" render={(props) => AppRouter}></Route>
         </AnimatedRouter>
       </Router>

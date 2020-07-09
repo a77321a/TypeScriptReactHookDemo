@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react'
+import React from 'react'
 // import PropTypes from 'prop-types'
 import { SearchBar } from 'antd-mobile'
 import { withRouter } from 'react-router-dom'
